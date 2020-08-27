@@ -6,7 +6,7 @@ namespace BookClubMVC.Models
     {
         public Guid Id { get; set; }
 
-        public Guid BookId { get; set; }
+        public Guid BooksId { get; set; }
 
         public string Username { get; set; }
 

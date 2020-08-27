@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace BookClubMVC.Models
 {
-    public class Book
+    public class Books
     {
 
         public Guid Id { get; set; }
