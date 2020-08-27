@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Npgsql.EntityFrameworkCore.PostgreSQL;
+using BookClubMVC.DAL;
 
 namespace BookClubMVC
 {
@@ -25,9 +28,11 @@ namespace BookClubMVC
         {
             services.AddControllersWithViews();
 
-            string connectionString = "" +
-                "" +
-                ""
+            string connectionString = "Host=lallah.db.elephantsql.com;Port=5432;Username=rwwitbef;Database=rwwitbef;Password=OtEGuIJpk3UHXo924gpHO6pSsqMxTHRv;";
+
+            services.AddDbContext<BookContext>(options => options.UseNpgsql(connectionString));
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +59,7 @@ namespace BookClubMVC
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Book}/{action=Index}/{id?}");
             });
         }
     }

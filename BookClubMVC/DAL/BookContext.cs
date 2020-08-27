@@ -13,9 +13,9 @@ namespace BookClubMVC.DAL
     {
         public BookContext(DbContextOptions<BookContext> options) : base(options) { }
         
-        public DbSet<Books> Book { get; set; }
+        public DbSet<Book> Book { get; set; }
 
     }
 
 
-}
+} 
