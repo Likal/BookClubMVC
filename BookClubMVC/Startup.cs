@@ -28,7 +28,7 @@ namespace BookClubMVC
         {
             services.AddControllersWithViews();
 
-            string connectionString = "Host=lallah.db.elephantsql.com;Port=5432;Username=rwwitbef;Database=rwwitbef;Password=OtEGuIJpk3UHXo924gpHO6pSsqMxTHRv;";
+            string connectionString = "Host=lallah.db.elephantsql.com;Port=5432;Username=rwwitbef;Database=rwwitbef;Password=;";
 
             services.AddDbContext<BookContext>(options => options.UseNpgsql(connectionString));
             
